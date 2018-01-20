@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.amdocs.Entity.TestCase" table="TEST_CASES">
+
+		<id name="Id" column="CASE_ID" type="long">
+			  <generator class="increment"/>
+		</id>
+		<property name="description" column="DESCRIPTION" />
+		<property name="steps" column="STEPS" />
+		<many-to-one name="defect" column="DEFECT_NO"
+			class="com.amdocs.Entity.Defect"  not-null="true"/>
+	</class>
+</hibernate-mapping>

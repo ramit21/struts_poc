@@ -1,0 +1,29 @@
+CREATE  TABLE defects ( defect_no varchar2(10)  NOT NULL,
+release_detected varchar2(10),
+release_fixed varchar2(10),
+date_opened date ,
+date_fixed date ,
+fixed_by varchar2(100),
+description varchar2(100),
+rca varchar2(1000),
+primary key (defect_no)
+);
+
+CREATE  TABLE test_cases ( 
+id number,
+description varchar2(1000),
+defect_no varchar2(10) ,
+primary key (id),
+FOREIGN KEY (defect_no) REFERENCES defects(defect_no)
+);
+
+create table test_steps(
+step_id number, 
+test_step number,
+description varchar2(10),
+seq number,
+primary key (step_id),
+FOREIGN KEY (test_step)  REFERENCES test_cases(id)
+);
+
+

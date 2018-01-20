@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.amdocs.Entity.Defect" table="DEFECTS">
+		<id name="defectNo" column="DEFECT_NO" ></id>
+		<property name="releaseDetected" column="RELEASE_DETECTED" />
+		<property name="releaseFixed" column="RELEASE_FIXED" />
+		<property name="dateOpened" column="DATE_OPENED" type ="date"/>
+		<property name="dateClosed" column="DATE_FIXED" type ="date"/>
+		<property name="fixedBy" column="FIXED_BY" />
+		<property name="description" column="DESCRIPTION" />
+		<property name="rca" column="RCA" />
+		<property name="status" column="STATUS" />
+		<set name="testCases" cascade="all" lazy="false">
+			<key column="DEFECT_NO" />
+			<one-to-many class="com.amdocs.Entity.TestCase" />
+		</set>
+	</class>
+</hibernate-mapping>

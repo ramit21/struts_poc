@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE tiles-definitions PUBLIC
+"-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+"http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+<tiles-definitions>
+
+<definition name="main.layout" path="/WEB-INF/jsps/mainLayout.jsp">
+<put name="title" value=""/>
+<put name="header" value="/WEB-INF/jsps/header.jsp"/>
+<put name="body" value=""/>
+<put name="footer" value="/WEB-INF/jsps/footer.jsp" />
+</definition>
+
+<!-- Defect Search Page -->
+<definition name="defectSearch.page" extends="main.layout">
+<put name="title" value="Search defect"/>
+<put name="body" value="/WEB-INF/jsps/defectSearch.jsp"/>
+</definition>
+
+<!-- Defect Details Page -->
+<definition name="defectDetails.page" extends="main.layout">
+<put name="title" value="Defect Details"/>
+<put name="body" value="/WEB-INF/jsps/defectDetails.jsp"/>
+</definition>
+
+<!-- Home Screen -->
+<definition name="home.page" extends="main.layout">
+<put name="title" value="Home Screen"/>
+<put name="body" value="/WEB-INF/jsps/home.jsp"/>
+</definition>
+
+</tiles-definitions>
